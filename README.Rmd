@@ -15,6 +15,10 @@ hrbrpkghelpr::stinking_badges()
 hrbrpkghelpr::yank_title_and_description()
 ```
 
+## WIP
+
+Definitely a WIP (drop some code for some credit!), and _p(sherlocked)_ ~= `0.7` but it's been a while since I made a public R package.
+
 ## What's Inside The Tin
 
 The following functions are implemented:
@@ -37,6 +41,22 @@ library(webfinger)
 # current version
 packageVersion("webfinger")
 
+```
+
+Basic `acct` usage:
+
+```{r ex-01}
+webfinger("acct:hrbrmstr@rud.is")
+```
+
+```{r ex-01a}
+webfinger("acct:hrbrmstr@infosec.exchange")
+```
+
+Some endpoints are friendlier than others:
+
+```{r ex-02}
+webfinger("hrbrmstr@mastodon.social")
 ```
 
 ## webfinger Metrics

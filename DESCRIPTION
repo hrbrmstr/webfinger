@@ -1,6 +1,6 @@
 Package: webfinger
 Type: Package
-Title: webfinger Title Goes Here Otherwise CRAN Checks Fail
+Title: Discover Information About People or Other Entities on the Internet
 Version: 0.1.0
 Date: 2022-11-08
 Authors@R: c(
@@ -12,13 +12,14 @@ Description: A good description goes here otherwise CRAN checks fail.
 URL: https://github.com/hrbrmstr/webfinger
 BugReports: https://github.com/webfinger/issues
 Encoding: UTF-8
-License: GreyNoise
+License: MIT + file LICENSE
 Suggests:
     tinytest
 Depends:
-    R (>= 3.6.0)
+    R (>= 4.0.0)
 Imports:
-    httr2,
-    jsonlite
+    httr,
+    jsonlite,
+    stringi
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
