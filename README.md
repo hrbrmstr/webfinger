@@ -7,7 +7,9 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 ![Signed commit
 %](https://img.shields.io/badge/Signed_Commits-0%25-lightgrey.svg)
 [![Linux build
-Status](https://travis-ci.org/hrbrmstr/webfinger.svg?branch=master)](https://travis-ci.org/hrbrmstr/webfinger)  
+Status](https://travis-ci.org/hrbrmstr/webfinger.svg?branch=master)](https://travis-ci.org/hrbrmstr/webfinger)
+[![Coverage
+Status](https://codecov.io/gh/hrbrmstr/webfinger/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/webfinger)
 ![Minimal R
 Version](https://img.shields.io/badge/R%3E%3D-4.0.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -32,6 +34,7 @@ The following functions are implemented:
 ## Installation
 
 ``` r
+remotes::install_github("hrbrmstr/webfinger")
 ```
 
 NOTE: To use the ‘remotes’ install options you will need to have the
