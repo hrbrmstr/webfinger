@@ -2,14 +2,9 @@
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Signed
-by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-0%25-lightgrey.svg)
-[![Linux build
-Status](https://travis-ci.org/hrbrmstr/webfinger.svg?branch=master)](https://travis-ci.org/hrbrmstr/webfinger)
-[![Coverage
-Status](https://codecov.io/gh/hrbrmstr/webfinger/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/webfinger)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
+
 ![Minimal R
 Version](https://img.shields.io/badge/R%3E%3D-4.0.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -58,7 +53,9 @@ webfinger("acct:hrbrmstr@rud.is")
 ## [1] "hrbrmstr@rud.is"
 ## 
 ## $aliases
-## [1] "https://rud.is/b/author/hrbrmstr/"
+## [1] "https://rud.is/b/author/hrbrmstr/"       "https://mastodon.social/@hrbrmstr"      
+## [3] "https://mastodon.social/users/hrbrmstr"  "https://infosec.exchange/@hrbrmstr"     
+## [5] "https://infosec.exchange/users/hrbrmstr"
 ## 
 ## $links
 ##                                     rel                      type                              href
@@ -91,7 +88,8 @@ webfinger("acct:hrbrmstr@infosec.exchange")
 ## [1] "webfinger" "list"
 ```
 
-Some endpoints are friendlier than others:
+Some endpoints are friendlier than others (but you should generally
+prepend `acct:` to be safe):
 
 ``` r
 webfinger("hrbrmstr@mastodon.social")
@@ -115,12 +113,28 @@ webfinger("hrbrmstr@mastodon.social")
 ## [1] "webfinger" "list"
 ```
 
+And, there exists ‘proxy’ webfinger services like this one for the bird
+site:
+
+``` r
+wf("acct:hrbrmstr@twitter.com", host = "twitter-webfinger.appspot.com")
+## $subject
+## [1] "hrbrmstr@twitter.com"
+## 
+## $links
+##                           rel                                                                          href
+## 1 http://webfist.org/spec/rel https://twitter-webfinger.appspot.com/user.json?uri=acct:hrbrmstr@twitter.com
+## 
+## attr(,"class")
+## [1] "webfinger" "list"
+```
+
 ## webfinger Metrics
 
-| Lang | \# Files | (%) | LoC | (%) | Blank lines | (%) | \# Lines |  (%) |
-|:-----|---------:|----:|----:|----:|------------:|----:|---------:|-----:|
-| R    |        4 | 0.4 |  42 | 0.4 |          13 | 0.2 |       57 | 0.31 |
-| Rmd  |        1 | 0.1 |  11 | 0.1 |          20 | 0.3 |       35 | 0.19 |
-| SUM  |        5 | 0.5 |  53 | 0.5 |          33 | 0.5 |       92 | 0.50 |
+| Lang | \# Files | (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+|:-----|---------:|----:|----:|-----:|------------:|-----:|---------:|-----:|
+| R    |        4 | 0.4 |  43 | 0.39 |          14 | 0.19 |       60 | 0.31 |
+| Rmd  |        1 | 0.1 |  12 | 0.11 |          22 | 0.31 |       38 | 0.19 |
+| SUM  |        5 | 0.5 |  55 | 0.50 |          36 | 0.50 |       98 | 0.50 |
 
 clock Package Metrics for webfinger

@@ -3,15 +3,19 @@
 \docType{package}
 \name{webfinger}
 \alias{webfinger}
+\alias{wf}
 \alias{webfinger-package}
 \title{Discover information about people or other entities on the Internet}
 \usage{
 webfinger(resource, host = NULL, ...)
+
+wf(resource, host = NULL, ...)
 }
 \arguments{
-\item{resource}{to lookup (e.g. \code{acct:hrbrmstr@rud.is})}
+\item{resource}{URI \verb{to lookup (e.g. }acct:hrbrmstr@rud.is`)}
 
-\item{host}{if not \code{NULL} then use this as the webfinger host vs the parsed entry from \code{resource}}
+\item{host}{if not \code{NULL} then use this as the webfinger host vs the
+parsed entry from \code{resource}}
 
 \item{...}{passed on to \code{\link[httr:GET]{httr::GET()}}}
 }
@@ -19,6 +23,9 @@ webfinger(resource, host = NULL, ...)
 list, classed \code{webfinger}
 }
 \description{
+\href{https://www.rfc-editor.org/rfc/rfc7033}{RFC 7033} describes the WebFinger
+protocol. This package/function only supports the \verb{acct:} URI for now.
+
 WebFinger is used to discover information about people or other
 entities on the Internet that are identified by a URI using
 standard Hypertext Transfer Protocol (HTTP) methods over a secure

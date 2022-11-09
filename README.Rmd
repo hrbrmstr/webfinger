@@ -53,10 +53,16 @@ webfinger("acct:hrbrmstr@rud.is")
 webfinger("acct:hrbrmstr@infosec.exchange")
 ```
 
-Some endpoints are friendlier than others:
+Some endpoints are friendlier than others (but you should generally prepend `acct:` to be safe):
 
 ```{r ex-02}
 webfinger("hrbrmstr@mastodon.social")
+```
+
+And, there exists 'proxy' webfinger services like this one for the bird site:
+
+```{r ex-03}
+wf("acct:hrbrmstr@twitter.com", host = "twitter-webfinger.appspot.com")
 ```
 
 ## webfinger Metrics
